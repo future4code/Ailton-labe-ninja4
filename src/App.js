@@ -13,10 +13,8 @@ export default class App extends React.Component {
     changePage: 'Home',
   }
 
-  handlePageHome = () => {
+  handleHomePage = () => {
     this.setState({changePage: 'Home'});
-    {this.onChange()} 
-    console.log("Entrei");
   };
 
   handleCreateJobPage = () => {
@@ -25,7 +23,6 @@ export default class App extends React.Component {
 
   handleFindJobPage = () => {
     this.setState({changePage: 'FindJobPage'});
-    this.onChange();
   }
 
   handleCartPage = () => {
@@ -51,7 +48,7 @@ export default class App extends React.Component {
 
     return (
       <div>
-        <Header handlePageHome = {this.handlePageHome} handleCartPage = {this.handleCartPage}/>
+        <Header handleHomePage = {this.handleHomePage} handleCartPage = {this.handleCartPage}/>
 
         <main>
         <button onClick = {this.handleFindJobPage}>Contratar um ninja</button>
