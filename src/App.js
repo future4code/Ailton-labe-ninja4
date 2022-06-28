@@ -7,6 +7,8 @@ import CreateJobPage from "./pages/CreateJobPage/CreateJobPage";
 import CartPage from "./pages/CartPage/CartPage";
 import styled from "styled-components";
 import axios from "axios";
+import { ChakraProvider } from '@chakra-ui/react'
+import { Button, ButtonGroup } from '@chakra-ui/react'
 
 export default class App extends React.Component {
   state = {
@@ -15,49 +17,62 @@ export default class App extends React.Component {
 
   handleHomePage = () => {
     this.setState({changePage: 'Home'});
+     
+    
   };
 
   handleCreateJobPage = () => {
     this.setState({changePage: 'CreatJobPage'})
+    console.log("Entrou");
+   
   }
 
   handleFindJobPage = () => {
     this.setState({changePage: 'FindJobPage'});
+    console.log("Criou");
+    
   }
 
   handleCartPage = () => {
     this.setState({changePage: 'CartPage'})
+    
   }
 
-  onChange = () => {
+  changePage = () => {
+    console.log("Entrou")
     switch (this.state.changePage) {
       case 'Home': 
-      return <HomePage/>
+      return <HomePage 
+      goToFindJob={this.handleFindJobPage}
+      goToCreatedJob={this.handleCreateJobPage}
+      />
       case 'CreatJobPage': 
       return <CreateJobPage/>
       case 'FindJobPage': 
       return <FindJobPage/>
       case 'CartPage': 
-      return <CartPage/>
+      return <CartPage
+      goToFindJob={this.handleFindJobPage}
+      goToCreatedJob={this.handleCreateJobPage}
+      />
       default:
         return <HomePage/>
+        
     }
+    
   }
 
   render() {
-
+  
     return (
-      <div>
+      <ChakraProvider>
         <Header handleHomePage = {this.handleHomePage} handleCartPage = {this.handleCartPage}/>
 
         <main>
-        <button onClick = {this.handleFindJobPage}>Contratar um ninja</button>
-    
-        <button onClick = {this.handleCreateJobPage}>Seja um ninja</button>
-        {this.onChange()}      
+            {this.changePage()}
         </main>
         <Footer/>
-      </div>
+      </ChakraProvider>
     );
   }
 }
