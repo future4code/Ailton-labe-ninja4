@@ -12,7 +12,7 @@ export default class Header extends React.Component {
       <div>
         <HeaderContainer>
           <p>Logo</p>
-          <button onClick = {() => this.props.handlePageHome()}>Home</button>
+          <button onClick = {() => this.props.handleHomePage()}>Home</button>
           <button onClick = {() => this.props.handleCartPage()}>Carrinho</button>
         </HeaderContainer>
       </div>
