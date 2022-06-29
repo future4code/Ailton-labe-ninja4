@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage/HomePage";
 import FindJobPage from "./pages/FindJobPage/FindJobPage";
+import JobDetailPage from "./pages/JobDetailPage/JobDetailPage"
 import CreateJobPage from "./pages/CreateJobPage/CreateJobPage";
 import CartPage from "./pages/CartPage/CartPage";
 import styled from "styled-components";
@@ -13,6 +14,9 @@ import { Button, ButtonGroup } from '@chakra-ui/react'
 export default class App extends React.Component {
   state = {
     changePage: 'Home',
+    title: '',
+    price: '',
+    duoDate: ''
   }
 
   handleHomePage = () => {
@@ -23,23 +27,22 @@ export default class App extends React.Component {
 
   handleCreateJobPage = () => {
     this.setState({changePage: 'CreatJobPage'})
-    console.log("Entrou");
-   
+  
   }
 
   handleFindJobPage = () => {
     this.setState({changePage: 'FindJobPage'});
-    console.log("Criou");
-    
   }
 
   handleCartPage = () => {
     this.setState({changePage: 'CartPage'})
+  }
+  handleDetailPage = () => {
+    this.setState({changePage: 'DetailPage'})
     
   }
 
   changePage = () => {
-    console.log("Entrou")
     switch (this.state.changePage) {
       case 'Home': 
       return <HomePage 
@@ -47,9 +50,14 @@ export default class App extends React.Component {
       goToCreatedJob={this.handleCreateJobPage}
       />
       case 'CreatJobPage': 
-      return <CreateJobPage/>
-      case 'FindJobPage': 
-      return <FindJobPage/>
+      return <CreateJobPage  
+      />
+      case 'FindJobPage':
+      return <FindJobPage
+      goToDetailPage={this.handleDetailPage} 
+      />
+      case 'DetailPage':
+      return <JobDetailPage/>
       case 'CartPage': 
       return <CartPage
       goToFindJob={this.handleFindJobPage}
