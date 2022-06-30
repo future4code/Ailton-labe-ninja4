@@ -27,7 +27,8 @@ export default class App extends React.Component {
   };
 
   handleCreateJobPage = () => {
-    this.setState({ changePage: "CreatJobPage" });
+
+   this.setState({ changePage: "CreatJobPage" });
   };
 
   handleFindJobPage = () => {
