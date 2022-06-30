@@ -23,15 +23,13 @@ export default class App extends React.Component {
 
   handleCreateJobPage = () => {
     this.setState({changePage: 'CreatJobPage'})
-    console.log("Entrou");
-   
+       
   }
 
   handleFindJobPage = () => {
     this.setState({changePage: 'FindJobPage'});
-    console.log("Criou");
     
-  }
+ }
 
   handleCartPage = () => {
     this.setState({changePage: 'CartPage'})
