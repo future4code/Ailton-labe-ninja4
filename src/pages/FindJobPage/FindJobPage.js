@@ -3,6 +3,7 @@ import JobCard from "../../components/JobCard/JobCard";
 import axios from "axios";
 import { BASE_URL, headers } from "../../constants/url";
 import styled from "styled-components";
+import {Section} from "./Styled.js";
 
 const CardsContainer = styled.div`
   display: grid;
@@ -113,7 +114,7 @@ export default class FindJobPage extends React.Component {
     });
 
     return (
-      <div>
+      <Section>
         <Filters>
           <input
             type="text"
@@ -143,7 +144,7 @@ export default class FindJobPage extends React.Component {
         </Filters>
 
         <CardsContainer>{jobComponents}</CardsContainer>
-      </div>
+      </Section>
     );
   }
 }
