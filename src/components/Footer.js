@@ -8,6 +8,7 @@ import { BsYoutube } from "react-icons/bs";
 
 
 const FooterContainer = styled.div`
+
 background-color: #86778a;
 /* border: 1px solid lightgrey; */
 bottom: 0;
@@ -41,7 +42,6 @@ const RedesSociais = styled.div`
 `
 
 export default class Footer extends React.Component {
-
   render() {
     return (
       <div>

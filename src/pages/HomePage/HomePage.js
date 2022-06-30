@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
 import { ChakraProvider } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
@@ -130,5 +130,4 @@ return(
         
     </div>
 )
-}
 }

@@ -33,8 +33,8 @@ const BotaoComMargem = styled(Button)`
     /* justify-content: center; */
     /* width: 200px; */
 `
-export default class Header extends React.Component {
 
+export default class Header extends React.Component {
   render() {
     return (
       <div>
