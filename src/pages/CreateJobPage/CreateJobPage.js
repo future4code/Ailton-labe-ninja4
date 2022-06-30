@@ -1,6 +1,7 @@
 import React from "react";
 import { BASE_URL, headers } from "../../constants/url";
 import axios from "axios";
+import {Section} from "./Styled.js";
 
 export default class CreateJobPage extends React.Component {
   state = {
@@ -55,7 +56,7 @@ export default class CreateJobPage extends React.Component {
   };
   render() {
     return (
-      <div>
+      <Section>
         <input
           type="text"
           placeholder="Titulo"
@@ -93,7 +94,7 @@ export default class CreateJobPage extends React.Component {
         </select>
         <button onClick={this.createJob}>Adicionar</button>
         <button onClick={this.props.goToFindJob}>Ir para lista serviços</button>
-      </div>
+      </Section>
     );
   }
 }
