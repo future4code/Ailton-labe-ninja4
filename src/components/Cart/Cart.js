@@ -7,16 +7,11 @@ const Card = styled.div`
   padding: 15px;
   margin: 12px;
 `;
-
 export default class Cart extends React.Component {
   render() {
-    {
-      console.log(this.props.listCart);
-    }
-
-    const cartComponents = this.props.listCart.map((job) => {
+      const cartComponents = this.props.listCart.map((job) => {
       return (
-        <Card key={job.id}>
+            <Card key={job.id}>
             <h3>{job.title}</h3>
             <p>
               <b>Preço:</b> R$ {job.price}

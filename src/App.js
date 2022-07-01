@@ -11,6 +11,7 @@ import axios from "axios";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 
+
 export default class App extends React.Component {
   state = {
     changePage: "Home",
@@ -57,7 +58,6 @@ export default class App extends React.Component {
 
   addToCart = (job) => {
     const checkedJob = this.state.listCart.find((jobItem) => job.id === jobItem.id);
-
 
     if (!checkedJob) {
       const newListCart = [...this.state.listCart, job];
@@ -130,7 +130,7 @@ export default class App extends React.Component {
         />
 
         <main>{this.changePage()}</main>
-        <Footer />
+        {/* <Footer /> */}
       </ChakraProvider>
     );
   }

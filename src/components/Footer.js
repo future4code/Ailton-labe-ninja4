@@ -12,7 +12,8 @@ const FooterContainer = styled.div`
 background-color: #86778a;
 /* border: 1px solid lightgrey; */
 bottom: 0;
-/* position: fixed; */
+margin-top: 200px;
+position: fixed;
 width: 100vw;
 padding: 30px 30px 30px 30px;
 display: flex;
