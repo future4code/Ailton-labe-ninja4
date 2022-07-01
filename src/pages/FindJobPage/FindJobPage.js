@@ -4,6 +4,10 @@ import axios from "axios";
 import { BASE_URL, headers } from "../../constants/url";
 import styled from "styled-components";
 import {Section} from "./Styled.js";
+import { Flex } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
+import { theme } from "../../constants/theme";
 
 const CardsContainer = styled.div`
   display: grid;
@@ -114,8 +118,10 @@ export default class FindJobPage extends React.Component {
     });
 
     return (
+      <ChakraProvider theme={theme}>
       <Section>
         <Filters>
+        <Flex justify='center' gap='10'>
           <input
             type="text"
             value={this.state.title}
@@ -141,10 +147,12 @@ export default class FindJobPage extends React.Component {
             <option value={"Titulo"}>Título</option>
             <option value={"Prazo"}>Prazo</option>
           </select>
+          </Flex>
         </Filters>
 
         <CardsContainer>{jobComponents}</CardsContainer>
       </Section>
+      </ChakraProvider>
     );
   }
 }

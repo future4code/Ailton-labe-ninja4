@@ -4,6 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
 import { theme } from "../../constants/theme";
 import Ninja from '../../assets/img/ninja2.png'
+import Logo from '../../assets/img/logoteste.png'
 
 
 const Botoes = styled.section`
@@ -95,7 +96,7 @@ const Section0 = styled.section`
         grid-column: 2/3;
         justify-self: center;
         align-self: center;
-        width:500px;
+        width:400px;
         
     }
 `
@@ -104,7 +105,7 @@ render(){
 return(
     <div>
         <Section0>
-            <img src={Ninja}/>
+            <img src={Logo}/>
             
             <Botoes>
                 <h3> Torne sua vida mais rapida e pratica </h3>

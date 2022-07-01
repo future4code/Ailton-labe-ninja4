@@ -11,7 +11,7 @@ const HeaderContainer = styled.div`
 border: 1px solid lightgrey;
 background-color: #450059;
 display: flex;
-position: fixed;
+/* position: fixed; */
 top:0;
 width: 100%;
 justify-content: space-between;

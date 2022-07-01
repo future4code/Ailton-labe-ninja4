@@ -1,25 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import { formatDate } from "../../constants/formatDate";
+import { Flex, Button } from '@chakra-ui/react'
 
 const Card = styled.div`
   border: 1px solid black;
   padding: 15px;
   margin: 12px;
 `;
-
-const Button = styled.button`
-  border: 1px solid lightgrey;
-  background: lightgray;
-  &_disabled {
-    background: red;
-  }
-`
-
 export default class JobCard extends React.Component {
 
   render() {
     return (
+      <Flex borderRadius='10px' border='1px' borderColor='purple.700' bg='purple.200' minW='250px' gap='10px' direction='column' m='5px' p='15px'>  
       <Card>
         <h3>{this.props.job.title}</h3>
         <p>
@@ -28,9 +21,10 @@ export default class JobCard extends React.Component {
         <p>
           <strong>Prazo:</strong> {formatDate(this.props.job.dueDate)}
         </p>
-        <button onClick={() => this.props.goToDetailPage(this.props.job)}>Ver detalhes</button>
-        <Button onClick={() => this.props.addToCart(this.props.job)} disabled={this.props.btnDisabled && true} >Adicionar no Carrinho</Button>
+        <Button onClick={() => this.props.goToDetailPage(this.props.job)}>Ver detalhes</Button>
+        <Button onClick={() => this.props.addToCart(this.props.job)}>Adicionar no Carrinho</Button>
       </Card>
+      </Flex>
     );
   }
 }

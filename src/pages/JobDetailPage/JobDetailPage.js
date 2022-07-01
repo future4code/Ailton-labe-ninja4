@@ -5,6 +5,8 @@ import { formatDate } from "../../constants/formatDate";
 import { BASE_URL, headers } from "../../constants/url";
 import { Button } from "@chakra-ui/react";
 import {Section} from "./Styled.js";
+import { Flex  } from '@chakra-ui/react'
+
 
 const Botoes = styled.section`
   display: flex;
@@ -13,6 +15,7 @@ const Botoes = styled.section`
 `;
 
 export default class DetailPage extends React.Component {
+
   componentDidMount() {
     this.getJobs();
   }
@@ -38,6 +41,7 @@ export default class DetailPage extends React.Component {
           
     return (
       <Section>
+              <Flex borderRadius='10px' border='1px' borderColor='purple.700' bg='purple.200' minW='250px' gap='10px' direction='column' m='5px' p='15px'>
         <Botoes>
           <p>{this.props.jobInfo.title}</p>
           <p>R$ {this.props.jobInfo.price},00</p>
@@ -50,6 +54,7 @@ export default class DetailPage extends React.Component {
             Voltar para lista
           </Button>
         </Botoes>
+        </Flex>
       </Section>
     );
   }
