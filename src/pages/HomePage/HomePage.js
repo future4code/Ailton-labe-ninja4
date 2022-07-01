@@ -4,7 +4,8 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
 import { theme } from "../../constants/theme";
 import Ninja from '../../assets/img/ninja2.png'
-import Logo from '../../assets/img/logoteste.png'
+import Logo from '../../assets/img/desenho.png'
+import Footer from "../../components/Footer";
 
 
 const Botoes = styled.section`
@@ -15,66 +16,32 @@ const Botoes = styled.section`
     align-self: center;
     justify-self: center;
     margin-top: 50px;
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
     
-    h3 {
-        font-size: 20px;
+    
+    p {
+        font-size: 3rem;
         font-weight: bold;
-
+        text-align: justify;
+        
     }
 
     button {
         display: flex;
-        width: 200px;
+        width: 160px;
 	    height: 40px;
         margin: 20px auto;
         align-items: center;
         justify-content: center;
-        font-size: 20px;
+        font-size: 17px;
         color: white;
     }
 `
-const Section1 =styled.section`
-    width: 100vw;
-    height: 400px;
-    border-top: 1px solid lightgrey;
-    margin: 0 auto;
-   justify-content: center;
-   font-size: 20px;
-   text-align: center;
-   padding-top: 30px;
-   `
-const Section2 =styled.section`
-    width: 100vw;
-    height: 400px;
-    background-color: #ff784f;
-    color: white;
-    border-top: 1px solid lightgrey;
-    margin: 0 auto;
-   justify-content: center;
-   font-size: 20px;
-   text-align: center;
-   padding-top: 30px;
-`
-const Section3 =styled.section`
-    width: 100vw;
-    height: 400px;
-    border-top: 1px solid lightgrey;
-    margin: 0 auto;
-   justify-content: center;
-   font-size: 20px;
-   text-align: center;
-   padding-top: 30px;
-`
-const Section4 =styled.section`
-    width: 100vw;
-    height: 400px;
-    border-top: 1px solid lightgrey;
-    margin: 0 auto;
-   justify-content: center;
-   font-size: 20px;
-   text-align: center;
-   padding-top: 30px;
+
+const TwoButtons = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 `
 
 const Section0 = styled.section`
@@ -82,21 +49,29 @@ const Section0 = styled.section`
     grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr;
     padding-bottom: 30px;
-    padding-top: 140px;
+    padding-top: 10px;
+    max-width: 95%;
+    margin: 0 auto;
 
-    h3 {
+    p {
         display: grid;
         grid-row: 1/2;
         justify-self: center;
         align-self: center;
-        color: #3e3740;
+        color: #450059;
+        line-height: 110% ;
+    }
+
+    span {
+        color:#FF784F;
     }
     img {
-        display: grid;
+        display: flex;
         grid-column: 2/3;
-        justify-self: center;
-        align-self: center;
-        width:400px;
+        justify-self: start;
+        /* align-self: flex-start; */
+        width:550px;
+        /* padding-right: 30px; */
         
     }
 `
@@ -104,31 +79,21 @@ export default class HomePage extends React.Component {
 render(){
 return(
     <div>
-        <Section0>
+         <Section0>
             <img src={Logo}/>
             
             <Botoes>
-                <h3> Torne sua vida mais rapida e pratica </h3>
-                <h3>como um ninja</h3>
+                <p >Torne sua vida  <br/> rápida e prática <span>como um ninja.</span></p>
                 <ChakraProvider theme={theme}>
-                    <Button bg="brand.900" onClick = {this.props.goToFindJob}>Contrate um Ninja</Button>
-                    <Button bg="brand.900" onClick = {this.props.goToCreatedJob}>Seja um Ninja</Button>
+                    <TwoButtons>
+                    <Button bg="brand.violet" onClick = {this.props.goToFindJob}>Contrate um Ninja</Button>
+                    <Button bg="brand.violet" onClick = {this.props.goToCreatedJob}>Seja um Ninja</Button>
+                    </TwoButtons>
                 </ChakraProvider>
             </Botoes>
         </Section0>
-        <Section1>
-            <h3>O que é a labeninja?</h3>
-        </Section1>
-        <Section2>
-            <h3>Como funciona</h3>
-        </Section2>
-        <Section3>
-            <h3>Parcerias Labeninja</h3>
-        </Section3>
-        <Section4>
-            <h3>Quem contratou</h3>
-        </Section4>
-        
+    
+        <Footer/>
     </div>
 )
 }
