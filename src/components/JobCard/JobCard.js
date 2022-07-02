@@ -1,31 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
 import { formatDate } from '../../constants/formatDate'
-import { Flex, Button } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import {BsInfoCircle} from 'react-icons/bs'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
-
-const Card = styled.div`
-	border: 1px solid black;
-	padding: 15px;
-	margin: 12px;
-	text-align: center;
-
-	h2{
-		font-weight: bold;
-		padding-bottom: 0.2rem;
-	}
-`
-
-const CardButtons = styled.div`
-	display: flex;
-	justify-content: space-around;
-	margin-top: 0.6rem;
-	font-size: 1.6rem;
-#cartDisable{
-	color:grey;
-}
-`
+import { Card, CardButtons } from './styled'
 
 export default class JobCard extends React.Component {
 	render() {

@@ -1,47 +1,9 @@
 import React from "react";
-import styled from "styled-components";
 import { RiInstagramFill } from "react-icons/ri";
 import { BsFacebook } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { BsYoutube } from "react-icons/bs";
-
-const FooterContainer = styled.div`
-  background-color: #f6f5f7;
-  bottom: 0;
-  width: 100%;
-  padding: 20px 0 20px 0;
-  display: flex;
-  justify-content: space-around;
-
-  ul {
-    color: #3f3d56;
-  }
-
-  h3 {
-    font-weight: bold;
-    font-size: 20px;
-    color: #450059;
-  }
-
-  img {
-    width: 20px;
-  }
-
-  div {
-    align-self: center;
-  }
-`;
-
-const RedesSociais = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #450059;
-  width: 100%;
-  gap: 10px;
-  font-size: 25px;
-`;
-
+import { FooterContainer, RedesSociais } from './FooterStyled'
 export default class Footer extends React.Component {
   render() {
     return (
@@ -63,16 +25,16 @@ export default class Footer extends React.Component {
           </ol>
           <div>
             <RedesSociais>
-              <a href="https://www.instagram.com/" target="_blank">
+              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
                 <RiInstagramFill />
               </a>
-              <a href="https://www.facebook.com/" target="_blank">
+              <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
                 <BsFacebook />
               </a>
-              <a href="https://twitter.com/" target="_blank">
+              <a href="https://twitter.com/" target="_blank" rel="noreferrer">
                 <BsTwitter />
               </a>
-              <a href="https://www.youtube.com/" target="_blank">
+              <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
                 <BsYoutube />
               </a>
             </RedesSociais>

@@ -1,37 +1,11 @@
 import React from "react";
 import axios from "axios";
 import { BASE_URL, headers } from "../../constants/url";
-import Select from "react-select";
-import { Flex, Button, Input, Text } from "@chakra-ui/react";
+import { Flex, Input, Text } from "@chakra-ui/react";
 import { ChakraProvider } from "@chakra-ui/react";
-// import { Button } from '@chakra-ui/react'
 import { theme } from "../../constants/theme";
-import styled from "styled-components";
+import { ButtonCreat, SelectItens, Form } from './Styled'
 
-const ButtonCreat = styled.button`
-  color: #450059;
-  font-weight: bold;
-  border-radius: 0.375rem;
-  font-size: 1.5rem;
-  margin: 0.2rem;
-  background-color: #e2e8f0;
-  height: 42px;
-  &:hover {
-    background-color: #ff784f;
-    color: white;
-  }
-`;
-
-const SelectTeste = styled(Select)`
-.css-12jo7m5{
-    background-color: #b4abb6;
-    border-radius: 0.2rem;
-    border: black;
-  }
-.css-xb97g8{
-    background-color: #b4abb6;
-}
-  `
 
 const options = [
   { value: 1, label: " Cartão de Débito" },
@@ -103,6 +77,7 @@ export default class CreateJobPage extends React.Component {
   render() {
     return (
       <ChakraProvider theme={theme}>
+        <Form>
         <Flex direction="column" mt="1rem" alignItems="center">
           <Flex
             shadow="dark-lg"
@@ -129,7 +104,7 @@ export default class CreateJobPage extends React.Component {
               value={this.state.description}
               onChange={this.onChangeDescripton}
               mb="4%"
-              placeholder="Descrição do serviço prestado"
+              placeholder="Descrição do Serviço Prestado"
             ></Input>
             <Input
               bg="white"
@@ -137,13 +112,13 @@ export default class CreateJobPage extends React.Component {
               onChange={this.onChangePrice}
               mb="4%"
               type="number"
-              placeholder="Informe o preço"
+              placeholder="Informe o Preço"
             ></Input>
-            <SelectTeste
+            <SelectItens
               isMulti
               options={options}
               styles='red'
-              placeholder="Informe as formas de pagamento aceitas"
+              placeholder="Formas de Pagamento aceitas"
               onChange={this.onChangePaymentMethods}
               onSelect={this.onChangePaymentMethods}
             />
@@ -154,7 +129,7 @@ export default class CreateJobPage extends React.Component {
               type="date"
               mt="4%"
               mb="4%"
-              placeholder="Informe o prazo disponível"
+              placeholder="Prazo Disponível"
             ></Input>
             <ButtonCreat onClick={this.createJob}>
               Cadastrar Serviço
@@ -164,6 +139,7 @@ export default class CreateJobPage extends React.Component {
             </ButtonCreat>
           </Flex>
         </Flex>
+        </Form>
       </ChakraProvider>
     );
   }
