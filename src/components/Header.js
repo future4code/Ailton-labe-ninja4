@@ -1,38 +1,9 @@
 import React from "react";
-import styled from "styled-components";
 import { ChakraProvider } from '@chakra-ui/react'
-import { Button } from '@chakra-ui/react'
 import LogoNinja from "../assets/img/labe.png"
 import {AiOutlineShoppingCart} from "react-icons/ai";
 import { theme } from "../constants/theme";
-
-
-const HeaderContainer = styled.div`
-background-color: white;
-display: flex;
-top:0;
-width: 100%;
-justify-content: space-between;
-align-items: center;
-padding: 10px 50px 10px 100px;
-z-index: 2;
-max-width: 95%;
-margin: 0 auto;
-
-`
-const Img = styled.img`
-    width: 250px;
-    padding: 0 0 0 30px;
-    margin-left: 20px;
-
-`
-const BotaoComMargem = styled(Button)`
-    margin-right: 40px;
-    color: white;
-    display: flex;
-    gap: 5px;
-    border: 2px solid white;
-`
+import { HeaderContainer, Img, ButtonCart } from './HeaderStyled'
 
 export default class Header extends React.Component {
   render() {
@@ -41,7 +12,7 @@ export default class Header extends React.Component {
         <ChakraProvider theme={theme}>
           <HeaderContainer>
           <Img onClick = {() => this.props.handleHomePage()}src={LogoNinja}/>
-            <BotaoComMargem bg="brand.violet" onClick = {() => this.props.handleCartPage()}>Carrinho <AiOutlineShoppingCart/></BotaoComMargem>
+            <ButtonCart bg="brand.violet" onClick = {() => this.props.handleCartPage()}>Carrinho <AiOutlineShoppingCart/></ButtonCart>
           </HeaderContainer>
         </ChakraProvider>
       </div>

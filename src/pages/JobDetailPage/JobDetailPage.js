@@ -1,56 +1,13 @@
 import React from "react";
-import styled from "styled-components";
 import axios from "axios";
 import { formatDate } from "../../constants/formatDate";
 import { BASE_URL, headers } from "../../constants/url";
 import { Section } from "./Styled.js";
-import { Flex } from "@chakra-ui/react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { RiArrowGoBackFill } from "react-icons/ri";
-import { ChakraProvider } from "@chakra-ui/react";
-import { theme } from "../../constants/theme";
+import { DetailsSection, ButtonsSection, Border } from './Styled'
 
-const DetailsSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: space-evenly;
-  width: 90%;
-  li {
-    list-style-position: inside;
-    text-align: justify;
-  }
-  p {
-    word-break: break-word;
-    line-height: 25px;
-  }
-  h1 {
-    font-weight: bold;
-    font-size: 1.5rem;
-  }
-`;
 
-const ButtonsSection = styled.section`
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 2rem;
-  width: 100%;
-  margin-top: 8px;
-  #cartDisable {
-    color: grey;
-  }
-`;
-
-const Border = styled.div`
-  margin-top: 100px;
-  border: solid 1px black;
-  width: 25rem;
-  height: 25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  `
 
 export default class DetailPage extends React.Component {
   componentDidMount() {

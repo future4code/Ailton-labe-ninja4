@@ -1,28 +1,9 @@
 import React from "react";
-import styled from "styled-components";
-import { Section } from "./Style.js";
+import { Section, Card, Scroll, } from "./Style.js";
 import { BsTrash } from "react-icons/bs";
 import { Button } from "@chakra-ui/react";
+import Carrinho from '../../assets/img/carrinho.gif'
 
-const Card = styled.section`
-  display: grid;
-  grid-template-columns: 3fr 2fr 1fr;
-  align-items: center;
-  width: 100%;
-  padding-left: 10px;
-  li {
-    list-style-position: inside;
-    text-align: justify;
-  }
-  p {
-    word-break: break-word;
-    line-height: 25px;
-  }
-  h1 {
-    font-weight: bold;
-    font-size: 1.3rem;
-  }
-`;
 
 export default class Cart extends React.Component {
   render() {
@@ -39,8 +20,10 @@ export default class Cart extends React.Component {
     });
     return (
       <Section>
-        {cartComponents ? cartComponents : <h2>Seu carrinho está vazio!</h2>}{" "}
+        <Scroll>
+        {cartComponents.length !== 0 ? cartComponents : <div><img src={Carrinho} alt='carrinho vazio'/> <h2>Seu Carrinho está vazio!</h2></div>}
         <Button colorScheme="purple">Comprar serviços</Button>
+        </Scroll>
       </Section>
     );
   }

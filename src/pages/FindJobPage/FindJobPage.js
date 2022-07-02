@@ -2,38 +2,11 @@ import React from "react";
 import JobCard from "../../components/JobCard/JobCard";
 import axios from "axios";
 import { BASE_URL, headers } from "../../constants/url";
-import styled from "styled-components";
-import { Section } from "./Styled.js";
 import { Flex } from "@chakra-ui/react";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Button } from "@chakra-ui/react";
 import { theme } from "../../constants/theme";
+import { CardsContainer, Filters, Inputs } from './Styled'
 
-const CardsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin: 12px;
-`;
-const Filters = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 30px;
-  select {
-    border: 1px solid black;
-    width: 300px;
-    height: 35px;
-    border-radius: 5px;
-	background-color: white;
-  }
-`;
-const Inputs = styled.input`
-  padding-left: 0.3rem;
-  display: inline;
-  border: 1px solid black;
-  width: 300px;
-  height: 35px;
-  border-radius: 5px;
-`;
 
 export default class FindJobPage extends React.Component {
   state = {
@@ -126,7 +99,6 @@ export default class FindJobPage extends React.Component {
 
     return (
       <ChakraProvider theme={theme}>
-        <Section>
           <Filters>
             <Flex justify="center" gap="10">
               <Inputs
@@ -156,9 +128,7 @@ export default class FindJobPage extends React.Component {
               </select>
             </Flex>
           </Filters>
-
           <CardsContainer>{jobComponents}</CardsContainer>
-        </Section>
       </ChakraProvider>
     );
   }
