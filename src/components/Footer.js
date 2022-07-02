@@ -9,21 +9,21 @@ export default class Footer extends React.Component {
     return (
       <div>
         <FooterContainer>
-          <ol>
+          <ol id="item1">
             <h3>Serviços</h3>
             <ul>Assistência Técnica</ul>
             <ul>Design e Tecnologia</ul>
             <ul>Consultoria</ul>
             <ul>Reformas</ul>
           </ol>
-          <ol>
+          <ol id="item2">
             <h3>Institucional</h3>
             <ul>Quem Somos</ul>
             <ul>Trabalhe Conosco</ul>
             <ul>Profissionais Verificados</ul>
             <ul>Fale Conosco</ul>
           </ol>
-          <div>
+          <div id="item3">
             <RedesSociais>
               <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
                 <RiInstagramFill />

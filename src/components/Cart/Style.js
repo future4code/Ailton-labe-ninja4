@@ -59,4 +59,10 @@ h2 {
   text-align: center;
   color:grey;
 }
+
+svg {
+  display: flex;
+  justify-self: center;
+  font-size: 25px;
+}
 `

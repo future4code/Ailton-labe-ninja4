@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from "@chakra-ui/react";
 import Cart from "../../components/Cart/Cart";
+
 import {Section} from "./Styled.js";
 
 export default class CartPage extends React.Component {
@@ -9,11 +9,10 @@ export default class CartPage extends React.Component {
       <Section>
         <Cart
           listCart={this.props.listCart}
+          removeToCart={this.props.removeToCart}
           serviceRemoveToCart={this.props.serviceRemoveToCart}
-        />
-        <Button colorScheme="purple" onClick={this.props.goToFindJob}>
-          Volta para lista de serviços
-        </Button>
+          goToFindJob={this.props.goToFindJob}
+        /> 
       </Section>
     );
   }

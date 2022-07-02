@@ -1,15 +1,11 @@
 import React from "react";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage/HomePage";
 import FindJobPage from "./pages/FindJobPage/FindJobPage";
 import JobDetailPage from "./pages/JobDetailPage/JobDetailPage";
 import CreateJobPage from "./pages/CreateJobPage/CreateJobPage";
 import CartPage from "./pages/CartPage/CartPage";
-import styled from "styled-components";
-import axios from "axios";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Button, ButtonGroup } from "@chakra-ui/react";
 
 export default class App extends React.Component {
   state = {
@@ -68,6 +64,15 @@ export default class App extends React.Component {
     this.setState({ btnDisabled: true });
   };
 
+  removeToCart = () => {
+    const emptylistCart = this.state.listCart
+
+    emptylistCart.splice(0, emptylistCart.length);
+
+    this.setState({ listCart: emptylistCart });
+
+  }
+
   serviceRemoveToCart = (job) => {
     if (window.confirm(`Deseja remover o ${job.title}?`)) {
       const removeToCart = this.state.listCart.filter((jobItem) => {
@@ -117,6 +122,7 @@ export default class App extends React.Component {
             goToCreatedJob={this.handleCreateJobPage}
             serviceRemoveToCart={this.serviceRemoveToCart}
             listCart={this.state.listCart}
+            removeToCart={this.removeToCart}
           />
         );
       default:

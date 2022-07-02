@@ -11,7 +11,11 @@ justify-content: space-around;
 
 @media screen and (max-width: 480px) {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
+  grid-template-areas:
+        'main right'
+        'footer footer';
+  /* gap: 10px; */
   text-align: center;
 }
 
@@ -32,12 +36,17 @@ img {
 div {
   align-self: center;
 }
+
+#item1 { grid-area: main; }
+#item2 { grid-area: right; }
+#item3 { grid-area: footer; }
 `;
 
 export const RedesSociais = styled.div`
 display: flex;
-justify-content: space-between;
+justify-content: center;
 align-items: center;
+padding: 10px 0;
 color: #450059;
 width: 100%;
 gap: 10px;
