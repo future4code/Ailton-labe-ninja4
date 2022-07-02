@@ -8,10 +8,8 @@ import { theme } from "../constants/theme";
 
 
 const HeaderContainer = styled.div`
-/* border: 1px solid lightgrey; */
 background-color: white;
 display: flex;
-/* position: fixed; */
 top:0;
 width: 100%;
 justify-content: space-between;
@@ -34,8 +32,6 @@ const BotaoComMargem = styled(Button)`
     display: flex;
     gap: 5px;
     border: 2px solid white;
-    /* justify-content: center; */
-    /* width: 200px; */
 `
 
 export default class Header extends React.Component {
@@ -45,7 +41,7 @@ export default class Header extends React.Component {
         <ChakraProvider theme={theme}>
           <HeaderContainer>
           <Img onClick = {() => this.props.handleHomePage()}src={LogoNinja}/>
-            <BotaoComMargem bg="brand.violet" onClick = {() => this.props.handleCartPage()}>Área de Compras <AiOutlineShoppingCart/></BotaoComMargem>
+            <BotaoComMargem bg="brand.violet" onClick = {() => this.props.handleCartPage()}>Carrinho <AiOutlineShoppingCart/></BotaoComMargem>
           </HeaderContainer>
         </ChakraProvider>
       </div>
