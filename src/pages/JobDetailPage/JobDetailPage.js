@@ -1,83 +1,116 @@
-import React from 'react'
-import styled from 'styled-components'
-import axios from 'axios'
-import { formatDate } from '../../constants/formatDate'
-import { BASE_URL, headers } from '../../constants/url'
-import { Button } from '@chakra-ui/react'
-import { Section } from './Styled.js'
-import { Flex } from '@chakra-ui/react'
-import { AiOutlineShoppingCart } from 'react-icons/ai'
+import React from "react";
+import styled from "styled-components";
+import axios from "axios";
+import { formatDate } from "../../constants/formatDate";
+import { BASE_URL, headers } from "../../constants/url";
+import { Section } from "./Styled.js";
+import { Flex } from "@chakra-ui/react";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { RiArrowGoBackFill } from "react-icons/ri";
+import { ChakraProvider } from "@chakra-ui/react";
+import { theme } from "../../constants/theme";
 
-const ButtonSection = styled.section`
-	display: flex;
-	justify-content: space-evenly;
-	margin-top: 30px;
-`
+const DetailsSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+  width: 90%;
+  li {
+    list-style-position: inside;
+    text-align: justify;
+  }
+  p {
+    word-break: break-word;
+    line-height: 25px;
+  }
+  h1 {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+`;
+
+const ButtonsSection = styled.section`
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2rem;
+  width: 100%;
+  margin-top: 8px;
+  #cartDisable {
+    color: grey;
+  }
+`;
+
+const Border = styled.div`
+  margin-top: 100px;
+  border: solid 1px black;
+  width: 25rem;
+  height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  `
 
 export default class DetailPage extends React.Component {
-	componentDidMount() {
-		this.getJobs()
-	}
+  componentDidMount() {
+    this.getJobs();
+  }
 
-	getJobs = () => {
-		axios
-			.get(`${BASE_URL}/jobs`, headers)
-			.then((res) => {
-				this.setState({
-					jobsList: res.data.jobs,
-					filteredJobsList: res.data.jobs,
-				})
-			})
-			.catch((err) => {
-				alert(err.response.data.message)
-			})
-	}
+  getJobs = () => {
+    axios
+      .get(`${BASE_URL}/jobs`, headers)
+      .then((res) => {
+        this.setState({
+          jobsList: res.data.jobs,
+          filteredJobsList: res.data.jobs,
+        });
+      })
+      .catch((err) => {
+        alert(err.response.data.message);
+      });
+  };
 
-	render() {
-		const status = this.props.listCart.filter((item) => {
-			return item.id === this.props.jobInfo.id
-		})
+  render() {
+    const status = this.props.listCart.filter((item) => {
+      return item.id === this.props.jobInfo.id;
+    });
 
-		const listResults = this.props.jobInfo.paymentMethods.map((pay, index) => (
-			<li key={index}>{pay}</li>
-		))
+    const listResults = this.props.jobInfo.paymentMethods.map((pay, index) => (
+      <li key={index}>{pay}</li>
+    ));
 
-		return (
-			<Section>
-				<Flex
-					borderRadius='10px'
-					border='1px'
-					borderColor='purple.700'
-					bg='purple.200'
-					minW='250px'
-					gap='10px'
-					direction='column'
-					m='5px'
-					p='15px'
-				>
-					<ButtonSection>
-						<p>{this.props.jobInfo.title}</p>
-						<p>R$ {this.props.jobInfo.price},00</p>
-						<p>
-							<strong>Prazo:</strong> {formatDate(this.props.jobInfo.dueDate)}
-						</p>
-						<p>{this.props.jobInfo.description}</p>
-						<ul>
-							<div>{listResults}</div>
-						</ul>
-						<Button colorScheme='purple' onClick={this.props.goToFindJobInfo}>
-							Voltar para lista
-						</Button>
-						{status.length === 0 ? (
-							<AiOutlineShoppingCart
-								onClick={() => this.props.addToCart(this.props.jobInfo)}
-							/>
-						) : (
-							<AiOutlineShoppingCart />
-						)}
-					</ButtonSection>
-				</Flex>
-			</Section>
-		)
-	}
+    return (
+      <Section>
+		  <Border>
+        <DetailsSection>
+          <h1>{this.props.jobInfo.title}</h1>
+          <p>{this.props.jobInfo.description}</p>
+          <p>
+            <strong>Preço:</strong>R$ {this.props.jobInfo.price},00
+          </p>
+          <p>
+            <strong>Prazo:</strong> {formatDate(this.props.jobInfo.dueDate)}
+          </p>
+          <p>
+            <strong>Formas de Pagamento:</strong>
+          </p>
+          <ul>
+            <div>{listResults}</div>
+          </ul>
+          <ButtonsSection>
+            {status.length === 0 ? (
+              <AiOutlineShoppingCart
+                onClick={() => this.props.addToCart(this.props.jobInfo)}
+              />
+            ) : (
+              <AiOutlineShoppingCart id='cartDisable'/>
+            )}
+            <RiArrowGoBackFill onClick={this.props.goToFindJob} />
+          </ButtonsSection>
+        </DetailsSection>
+		</Border>
+      </Section>
+    );
+  }
 }

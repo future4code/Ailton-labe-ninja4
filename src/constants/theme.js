@@ -13,6 +13,7 @@ export const theme = extendTheme({
       coral: '#FF784F',
       saffron: '#FA9440',
       lSalmon: '#FF9976',
+      lGrey: '#E2E8F0',
     },
   },
 })

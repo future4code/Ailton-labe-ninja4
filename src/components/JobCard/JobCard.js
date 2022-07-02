@@ -2,12 +2,31 @@ import React from 'react'
 import styled from 'styled-components'
 import { formatDate } from '../../constants/formatDate'
 import { Flex, Button } from '@chakra-ui/react'
+import {BsInfoCircle} from 'react-icons/bs'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 
 const Card = styled.div`
 	border: 1px solid black;
 	padding: 15px;
 	margin: 12px;
+	text-align: center;
+
+	h2{
+		font-weight: bold;
+		padding-bottom: 0.2rem;
+	}
 `
+
+const CardButtons = styled.div`
+	display: flex;
+	justify-content: space-around;
+	margin-top: 0.6rem;
+	font-size: 1.6rem;
+#cartDisable{
+	color:grey;
+}
+`
+
 export default class JobCard extends React.Component {
 	render() {
 		const status = this.props.listCart.filter((item) => {
@@ -26,24 +45,21 @@ export default class JobCard extends React.Component {
 				p='15px'
 			>
 				<Card>
-					<h3>{this.props.job.title}</h3>
+					<h2>{this.props.job.title}</h2>
 					<p>
 						<strong>Preço:</strong> R$ {this.props.job.price},00
 					</p>
 					<p>
 						<strong>Prazo:</strong> {formatDate(this.props.job.dueDate)}
 					</p>
-					<Button onClick={() => this.props.goToDetailPage(this.props.job)}>
-						Ver detalhes
-					</Button>
-					{/* <Button onClick={() => this.props.addToCart(this.props.job)}>Adicionar no Carrinho</Button> */}
+					<CardButtons>
+					<BsInfoCircle onClick={() => this.props.goToDetailPage(this.props.job)}/>
 					{status.length === 0 ? (
-						<Button onClick={() => this.props.addToCart(this.props.job)}>
-							Adicionar no Carrinho
-						</Button>
+						<AiOutlineShoppingCart onClick={() => this.props.addToCart(this.props.job)}/>
 					) : (
-						<p>testeButao</p>
+						<AiOutlineShoppingCart id='cartDisable'/>
 					)}
+					</CardButtons>
 				</Card>
 			</Flex>
 		)

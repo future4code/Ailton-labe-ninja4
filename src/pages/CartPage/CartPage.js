@@ -14,7 +14,6 @@ export default class CartPage extends React.Component {
         <Button colorScheme="purple" onClick={this.props.goToFindJob}>
           Volta para lista de serviços
         </Button>
-        <Button colorScheme="purple">Comprar serviços</Button>
       </Section>
     );
   }
