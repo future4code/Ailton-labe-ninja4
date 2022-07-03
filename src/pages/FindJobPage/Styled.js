@@ -4,8 +4,8 @@ export const Section = styled.section`
   padding-bottom: 100px;
   padding-top: 0px;
   width: 100%;
+ 
 `;
-
 
 export const CardsContainer = styled.div`
   display: grid;
@@ -18,7 +18,7 @@ export const CardsContainer = styled.div`
   @media screen and (max-width: 480px) {
     grid-template-columns: repeat(1, 1fr);
     margin: 0 auto;
-    width:90%;
+    width: 90%;
   }
 `;
 
@@ -26,20 +26,21 @@ export const Filters = styled.div`
   display: flex;
   flex-direction: column;
   margin: 30px;
-  select {
+  select{
     border: 1px solid black;
     width: 300px;
     height: 35px;
     border-radius: 5px;
-	background-color: white;
+    background-color: white;
+    
   }
   .css-1ysf10c {
     @media screen and (max-width: 480px) {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    gap: 10px;
-  }
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      gap: 10px;
+    }
   }
 `;
 export const Inputs = styled.input`
@@ -49,6 +50,4 @@ export const Inputs = styled.input`
   width: 300px;
   height: 35px;
   border-radius: 5px;
- 
 `;
-

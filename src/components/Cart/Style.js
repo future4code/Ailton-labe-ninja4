@@ -12,16 +12,19 @@ export const Section = styled.section`
   width: 30rem;
   height: 30rem;
   margin: 0 auto;
-   @media screen and (max-width: 480px) {
+  @media screen and (max-width: 480px) {
     width: 95%;
   }
 `;
 export const Card = styled.section`
   display: grid;
-  grid-template-columns: 3fr 2fr 1fr;
+  grid-template-columns: 2fr 2fr 1fr;
   align-items: center;
   width: 100%;
   padding-left: 10px;
+  padding-bottom: 10px;
+  margin-top: 15px;
+  border-bottom: 1px dashed #450059;
   p {
     word-break: break-word;
     line-height: 25px;
@@ -37,32 +40,45 @@ export const Scroll = styled.div`
   height: 100%;
   margin-top: 30px;
   overflow: overlay;
+  .css-5vhb64 {
+    background-color: #450059;
+    &:hover {
+      background-color: #fa9440;
+    }
+  }
+
   ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background: #450059;
-}
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
-}
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #450059;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+  }
 
-img {
-  margin: 0 auto;
-}
+  img {
+    margin: 0 auto;
+  }
 
-h2 {
-  margin-top: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  color:grey;
-}
+  h2 {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: grey;
+  }
 
-svg {
-  display: flex;
-  justify-self: center;
-  font-size: 25px;
-}
+  svg {
+    cursor: pointer;
+    display: flex;
+    justify-self: center;
+    font-size: 25px;
+    color: #450059;
+  }
+`;
+
+export const Img = styled.img`
+width: 75%;
 `

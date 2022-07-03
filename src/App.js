@@ -6,6 +6,7 @@ import JobDetailPage from "./pages/JobDetailPage/JobDetailPage";
 import CreateJobPage from "./pages/CreateJobPage/CreateJobPage";
 import CartPage from "./pages/CartPage/CartPage";
 import { ChakraProvider } from "@chakra-ui/react";
+import Swal from "sweetalert2";
 
 export default class App extends React.Component {
   state = {
@@ -59,7 +60,7 @@ export default class App extends React.Component {
       const newListCart = [...this.state.listCart, job];
 
       this.setState({ listCart: newListCart });
-      alert(`Serviço ${job.title} adicionado ao carrinho!`);
+      Swal.fire("", `Serviço ${job.title} adicionado ao carrinho!`, "success");
     }
     this.setState({ btnDisabled: true });
   };
@@ -74,7 +75,7 @@ export default class App extends React.Component {
   }
 
   serviceRemoveToCart = (job) => {
-    if (window.confirm(`Deseja remover o ${job.title}?`)) {
+    if (Swal.fire(`${job.title} Removido do Carrinho!`)) {
       const removeToCart = this.state.listCart.filter((jobItem) => {
         if (job.id !== jobItem.id) {
           return {

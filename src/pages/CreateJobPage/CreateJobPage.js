@@ -4,7 +4,9 @@ import { BASE_URL, headers } from "../../constants/url";
 import { Flex, Input, Text } from "@chakra-ui/react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "../../constants/theme";
-import { ButtonCreat, SelectItens, Form } from './Styled'
+import { Section, ButtonCreat, SelectItens } from "./Styled";
+import { Spinner } from "@chakra-ui/react";
+import Swal from "sweetalert2";
 
 
 const options = [
@@ -22,6 +24,7 @@ export default class CreateJobPage extends React.Component {
     price: "",
     paymentMethods: [],
     date: "",
+    isLoading: false,
   };
 
   onChangeTitle = (event) => {
@@ -56,6 +59,9 @@ export default class CreateJobPage extends React.Component {
       paymentMethods: this.state.paymentMethods,
       dueDate: this.state.date,
     };
+
+    this.setState({ isLoading: true });
+
     try {
       const res = await axios.post(`${BASE_URL}/jobs`, body, headers);
       console.log(res);
@@ -66,18 +72,21 @@ export default class CreateJobPage extends React.Component {
         paymentMethods: [],
         date: "",
       });
-      alert(`Serviço ${this.state.title} criado com sucesso`);
+      Swal.fire("", `Serviço ${this.state.title} criado com sucesso`, "success")
+      this.setState({ isLoading: false });
     } catch (error) {
       console.log(error.response.data.message);
       this.setState({ resposta: true, status: "error" });
-      alert("Algo deu errado, tente novamente!");
+      this.setState({ isLoading: false });
+
+      Swal.fire("", "Algo deu errado, tente novamente!", "error");
     }
   };
 
   render() {
     return (
       <ChakraProvider theme={theme}>
-        <Form>
+        <Section>
         <Flex direction="column" mt="1rem" alignItems="center">
           <Flex
             shadow="dark-lg"
@@ -97,7 +106,7 @@ export default class CreateJobPage extends React.Component {
               onChange={this.onChangeTitle}
               mt="8%"
               mb="4%"
-              placeholder="Título do anúncio"
+              placeholder="Título do Anúncio"
             ></Input>
             <Input
               bg="white"
@@ -112,13 +121,13 @@ export default class CreateJobPage extends React.Component {
               onChange={this.onChangePrice}
               mb="4%"
               type="number"
-              placeholder="Informe o Preço"
+              placeholder="Preço do Serviço Prestado"
             ></Input>
             <SelectItens
               isMulti
               options={options}
-              styles='red'
-              placeholder="Formas de Pagamento aceitas"
+              styles="red"
+              placeholder="Formas de Pagamento Aceitas"
               onChange={this.onChangePaymentMethods}
               onSelect={this.onChangePaymentMethods}
             />
@@ -129,18 +138,18 @@ export default class CreateJobPage extends React.Component {
               type="date"
               mt="4%"
               mb="4%"
-              placeholder="Prazo Disponível"
-            ></Input>
+              placeholder="Informe o prazo disponível"
+              ></Input>
             <ButtonCreat onClick={this.createJob}>
-              Cadastrar Serviço
+              {this.state.isLoading ? <Spinner /> : "Cadastrar Serviço"}
             </ButtonCreat>
             <ButtonCreat onClick={this.props.goToFindJob}>
               Lista de Serviços
             </ButtonCreat>
           </Flex>
         </Flex>
-        </Form>
-      </ChakraProvider>
+        </Section>
+   </ChakraProvider>
     );
   }
 }

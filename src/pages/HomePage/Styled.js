@@ -24,6 +24,9 @@ export const Container = styled.section`
     justify-content: center;
     font-size: 17px;
     color: white;
+    &:hover {
+      background-color: #fa9440;
+    }
   }
 `;
 
