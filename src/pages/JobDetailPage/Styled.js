@@ -13,12 +13,15 @@ export const Section = styled.section`
   height: 30rem;
   margin: 0 auto;
 
+  svg{
+    color: #450059;
+  }
   @media screen and (max-width: 480px) {
-   margin-top: 50px;
+    margin-top: 50px;
     width: 95%;
   }
- `
-  export const DetailsSection = styled.section`
+`;
+export const DetailsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,12 +35,13 @@ export const Section = styled.section`
   p {
     word-break: break-word;
     line-height: 25px;
+    margin-bottom: 10px;
   }
   h1 {
     font-weight: bold;
     font-size: 1.5rem;
+    margin-bottom: 30px;
   }
-
 `;
 
 export const ButtonsSection = styled.section`
@@ -62,5 +66,4 @@ export const Border = styled.div`
   @media screen and (max-width: 480px) {
     width: 90%;
   }
-  
- `
+`;

@@ -1,19 +1,18 @@
 import React from "react";
-import { Section, Card, Scroll, } from "./Style.js";
-// import Swal from 'sweetalert2'
+import { Section, Card, Scroll, Img } from "./Style.js";
 import { BsTrash } from "react-icons/bs";
 import { Button } from "@chakra-ui/react";
 import { RiArrowGoBackFill } from "react-icons/ri";
-import Carrinho from '../../assets/img/carrinho.gif'
-
+import Carrinho from "../../assets/img/carrinho.gif";
+import Swal from 'sweetalert2'
 
 export default class Cart extends React.Component {
   state = {
-    removed: false
-  }
+    removed: false,
+  };
 
   componentDidUpdate(prevProps) {
-    console.log(prevProps)
+    console.log(prevProps);
   }
 
   render() {
@@ -30,17 +29,25 @@ export default class Cart extends React.Component {
     });
 
     const purchase = () => {
-      // Swal.fire("", "Compra finalizada com sucesso!", "success");
-      alert(`Compra finalizada com sucesso!`)
-      this.props.removeToCart()
-    }
+      Swal.fire("", "Compra finalizada com sucesso!", "success");
+      this.props.removeToCart();
+    };
 
     return (
       <Section>
         <Scroll>
-        <RiArrowGoBackFill onClick={this.props.goToFindJob} />
-        {cartComponents.length !== 0 ? cartComponents : <div><img src={Carrinho} alt='carrinho vazio'/> <h2>Seu Carrinho está vazio!</h2></div>}
-        <Button colorScheme="purple" onClick={purchase}>Comprar serviços</Button>
+          <RiArrowGoBackFill onClick={this.props.goToFindJob} />
+          {cartComponents.length !== 0 ? (
+            cartComponents
+          ) : (
+            <div>
+              <Img src={Carrinho} alt="carrinho vazio" />{" "}
+              <h2>Seu Carrinho está vazio!</h2>
+            </div>
+          )}
+          <Button colorScheme="purple" onClick={purchase}>
+            Comprar serviços
+          </Button>
         </Scroll>
       </Section>
     );

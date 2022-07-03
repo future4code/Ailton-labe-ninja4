@@ -3,7 +3,7 @@ import { RiInstagramFill } from "react-icons/ri";
 import { BsFacebook } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { BsYoutube } from "react-icons/bs";
-import { FooterContainer, RedesSociais } from './FooterStyled'
+import { FooterContainer, RedesSociais } from "./FooterStyled";
 export default class Footer extends React.Component {
   render() {
     return (
@@ -25,16 +25,28 @@ export default class Footer extends React.Component {
           </ol>
           <div id="item3">
             <RedesSociais>
-              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <RiInstagramFill />
               </a>
-              <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <BsFacebook />
               </a>
               <a href="https://twitter.com/" target="_blank" rel="noreferrer">
                 <BsTwitter />
               </a>
-              <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <BsYoutube />
               </a>
             </RedesSociais>

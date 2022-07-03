@@ -5,9 +5,14 @@ import { BASE_URL, headers } from "../../constants/url";
 import { Flex } from "@chakra-ui/react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "../../constants/theme";
-import { CardsContainer, Filters, Inputs } from './Styled'
+import { CardsContainer, Filters, Inputs } from "./Styled";
+import { Spinner } from "@chakra-ui/react";
+import Swal from "sweetalert2";
+import styled from "styled-components";
 
-
+const Button = styled.button`
+color: red;
+`
 export default class FindJobPage extends React.Component {
   state = {
     jobsList: [],
@@ -16,6 +21,7 @@ export default class FindJobPage extends React.Component {
     valueMin: "",
     valueMax: "",
     order: "",
+    isLoading: false,
   };
 
   componentDidMount() {
@@ -39,6 +45,7 @@ export default class FindJobPage extends React.Component {
   };
 
   getJobs = () => {
+    this.setState({ isLoading: true });
     axios
       .get(`${BASE_URL}/jobs`, headers)
       .then((res) => {
@@ -46,10 +53,41 @@ export default class FindJobPage extends React.Component {
           jobsList: res.data.jobs,
           filteredJobsList: res.data.jobs,
         });
+        this.setState({ isLoading: false });
       })
       .catch((err) => {
-        alert(err.response.data.message);
+        Swal.fire("", err.response.data.message, "error");
+        this.setState({ isLoading: false });
       });
+  };
+
+  removeJob = (jobId) => {
+    if ((Swal.fire({
+      title: 'Tem certeza que deseja remover este serviço??',
+      text: "Você não poderá reverter isso!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#450059',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Sim!'
+    }).then((result) => {
+      this.getJobs();
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Serviço Deletedado com Sucesso!',
+        )
+      }
+    }))) {
+      axios
+        .delete(`${BASE_URL}/jobs/${jobId}`, headers)
+        .then(() => {
+          this.getJobs();
+        })
+        .catch((err) => {
+          Swal.fire("", err.response.data.message, "error");;
+        });
+    }
   };
 
   render() {
@@ -86,6 +124,8 @@ export default class FindJobPage extends React.Component {
     const jobComponents = newList.map((job) => {
       return (
         <div key={job.id}>
+          <Button onClick={() => this.removeJob(job.id)}>Remover Job</Button>
+
           <JobCard
             job={job}
             goToDetailPage={this.props.goToDetailPage}
@@ -99,36 +139,38 @@ export default class FindJobPage extends React.Component {
 
     return (
       <ChakraProvider theme={theme}>
-          <Filters>
-            <Flex justify="center" gap="10">
-              <Inputs
-                type="text"
-                value={this.state.title}
-                onChange={this.handleTitle}
-                placeholder="Titulo ou Descrição"
-              />
-              <Inputs
-                type="number"
-                value={this.state.valueMin}
-                onChange={this.handleValueMin}
-                placeholder="Valor Mínimo"
-              />
-              <Inputs
-                type="number"
-                value={this.state.valueMax}
-                onChange={this.handleValueMax}
-                placeholder="Valor Máximo"
-              />
-              <select value={this.state.order} onChange={this.handleOrder}>
-                <option value={"Sem Ordenacao"}>Sem Ordenação</option>
-                <option value={"Menor Valor"}>Menor Valor</option>
-                <option value={"Maior Valor"}>Maior Valor</option>
-                <option value={"Titulo"}>Título</option>
-                <option value={"Prazo"}>Prazo</option>
-              </select>
-            </Flex>
-          </Filters>
-          <CardsContainer>{jobComponents}</CardsContainer>
+        <Filters>
+          <Flex justify="center" gap="10">
+            <Inputs
+              type="text"
+              value={this.state.title}
+              onChange={this.handleTitle}
+              placeholder="Titulo ou Descrição"
+            />
+            <Inputs
+              type="number"
+              value={this.state.valueMin}
+              onChange={this.handleValueMin}
+              placeholder="Valor Mínimo"
+            />
+            <Inputs
+              type="number"
+              value={this.state.valueMax}
+              onChange={this.handleValueMax}
+              placeholder="Valor Máximo"
+            />
+            <select value={this.state.order} onChange={this.handleOrder}>
+              <option value={"Sem Ordenacao"}>Sem Ordenação</option>
+              <option value={"Menor Valor"}>Menor Valor</option>
+              <option value={"Maior Valor"}>Maior Valor</option>
+              <option value={"Titulo"}>Título</option>
+              <option value={"Prazo"}>Prazo</option>
+            </select>
+          </Flex>
+        </Filters>
+        <CardsContainer>
+          {this.state.isLoading ? <Spinner margin= "auto" /> : jobComponents}
+        </CardsContainer>
       </ChakraProvider>
     );
   }

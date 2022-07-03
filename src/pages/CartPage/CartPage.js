@@ -1,7 +1,6 @@
 import React from "react";
 import Cart from "../../components/Cart/Cart";
-
-import {Section} from "./Styled.js";
+import { Section } from "./Styled.js";
 
 export default class CartPage extends React.Component {
   render() {
@@ -12,7 +11,7 @@ export default class CartPage extends React.Component {
           removeToCart={this.props.removeToCart}
           serviceRemoveToCart={this.props.serviceRemoveToCart}
           goToFindJob={this.props.goToFindJob}
-        /> 
+        />
       </Section>
     );
   }
