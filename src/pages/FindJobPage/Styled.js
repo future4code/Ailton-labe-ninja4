@@ -51,3 +51,7 @@ export const Inputs = styled.input`
   height: 35px;
   border-radius: 5px;
 `;
+
+export const Button = styled.button`
+color: white;
+`

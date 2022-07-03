@@ -13,9 +13,10 @@ export const HeaderContainer = styled.div`
   max-width: 95%;
   margin: 0 auto;
   .css-7xa9xu {
-  &:hover{
-    background-color: #FA9440;
-  }}
+    &:hover {
+      background-color: #fa9440;
+    }
+  }
 
   @media screen and (max-width: 480px) {
     width: 100%;
@@ -23,7 +24,7 @@ export const HeaderContainer = styled.div`
   }
 `;
 export const Img = styled.img`
-cursor: pointer;
+  cursor: pointer;
   width: 250px;
   padding: 0 0 0 30px;
   margin-left: 20px;
@@ -40,7 +41,6 @@ export const ButtonCart = styled(Button)`
   display: flex;
   gap: 5px;
   border: 2px solid white;
-  
 
   @media screen and (max-width: 480px) {
     margin-right: 0;

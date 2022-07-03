@@ -40,6 +40,10 @@ export const Scroll = styled.div`
   height: 100%;
   margin-top: 30px;
   overflow: overlay;
+  #purchaseDisable {
+    color: grey;
+  }
+
   .css-5vhb64 {
     background-color: #450059;
     &:hover {
@@ -61,7 +65,9 @@ export const Scroll = styled.div`
   img {
     margin: 0 auto;
   }
-
+  h1 {
+    margin-top: 20px;
+  }
   h2 {
     margin-top: 10px;
     font-size: 20px;
@@ -80,5 +86,6 @@ export const Scroll = styled.div`
 `;
 
 export const Img = styled.img`
-width: 75%;
-`
+  width: 85%;
+  margin: 0 auto;
+`;

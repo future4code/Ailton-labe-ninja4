@@ -10,11 +10,9 @@ export const FooterContainer = styled.div`
 
   @media screen and (max-width: 480px) {
     display: grid;
-    /* grid-template-columns: repeat(2, 1fr); */
     grid-template-areas:
       "main right"
       "footer footer";
-    /* gap: 10px; */
     text-align: center;
   }
 
@@ -58,11 +56,11 @@ export const RedesSociais = styled.div`
   font-size: 25px;
 
   svg {
-    &:hover{
-    color: #FA9440;
+    &:hover {
+      color: #fa9440;
+    }
   }
-  }
-  
+
   @media screen and (max-width: 480px) {
   }
 `;
