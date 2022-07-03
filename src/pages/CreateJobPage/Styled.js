@@ -2,17 +2,15 @@ import styled from "styled-components";
 import Select from "react-select";
 
 export const Section = styled.section`
-
-
   @media screen and (max-width: 480px) {
-      .css-1syf8ka {
-        width: 96%;
-        margin-top: 30px;
-        p {
-          margin-top: 15px;
-        }
+    .css-1syf8ka {
+      width: 96%;
+      margin-top: 30px;
+      p {
+        margin-top: 15px;
       }
     }
+  }
 `;
 export const ButtonCreat = styled.button`
   color: #450059;

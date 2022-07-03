@@ -5,14 +5,10 @@ import { BASE_URL, headers } from "../../constants/url";
 import { Flex } from "@chakra-ui/react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "../../constants/theme";
-import { CardsContainer, Filters, Inputs } from "./Styled";
+import { CardsContainer, Filters, Inputs, Button } from "./Styled";
 import { Spinner } from "@chakra-ui/react";
 import Swal from "sweetalert2";
-import styled from "styled-components";
 
-const Button = styled.button`
-color: red;
-`
 export default class FindJobPage extends React.Component {
   state = {
     jobsList: [],
@@ -124,7 +120,7 @@ export default class FindJobPage extends React.Component {
     const jobComponents = newList.map((job) => {
       return (
         <div key={job.id}>
-          <Button onClick={() => this.removeJob(job.id)}>Remover Job</Button>
+          <Button onClick={() => this.removeJob(job.id)}>x</Button>
 
           <JobCard
             job={job}

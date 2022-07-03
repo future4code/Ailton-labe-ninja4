@@ -53,7 +53,7 @@ export default class DetailPage extends React.Component {
               <h1>{this.props.jobInfo.title}</h1>
               <p>{this.props.jobInfo.description}</p>
               <p>
-                <strong>Preço: </strong>R${this.props.jobInfo.price},00
+                <strong>Preço: </strong>R$ {this.props.jobInfo.price},00
               </p>
               <p>
                 <strong>Prazo:</strong> {formatDate(this.props.jobInfo.dueDate)}

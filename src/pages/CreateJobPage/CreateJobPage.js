@@ -8,7 +8,6 @@ import { Section, ButtonCreat, SelectItens } from "./Styled";
 import { Spinner } from "@chakra-ui/react";
 import Swal from "sweetalert2";
 
-
 const options = [
   { value: 1, label: " Cartão de Débito" },
   { value: 2, label: " Cartão de Crédito" },
@@ -72,7 +71,11 @@ export default class CreateJobPage extends React.Component {
         paymentMethods: [],
         date: "",
       });
-      Swal.fire("", `Serviço ${this.state.title} criado com sucesso`, "success")
+      Swal.fire(
+        "",
+        `Serviço ${this.state.title} criado com sucesso`,
+        "success"
+      );
       this.setState({ isLoading: false });
     } catch (error) {
       console.log(error.response.data.message);
@@ -87,69 +90,69 @@ export default class CreateJobPage extends React.Component {
     return (
       <ChakraProvider theme={theme}>
         <Section>
-        <Flex direction="column" mt="1rem" alignItems="center">
-          <Flex
-            shadow="dark-lg"
-            borderRadius="2rem"
-            p="1rem"
-            bg="brand.violet"
-            direction="column"
-            w="35rem"
-            h="32rem"
-          >
-            <Text color="brand.white" textAlign="center" fontSize="2rem">
-              Cadastre o seu serviço!
-            </Text>
-            <Input
-              bg="white"
-              value={this.state.title}
-              onChange={this.onChangeTitle}
-              mt="8%"
-              mb="4%"
-              placeholder="Título do Anúncio"
-            ></Input>
-            <Input
-              bg="white"
-              value={this.state.description}
-              onChange={this.onChangeDescripton}
-              mb="4%"
-              placeholder="Descrição do Serviço Prestado"
-            ></Input>
-            <Input
-              bg="white"
-              value={this.state.price}
-              onChange={this.onChangePrice}
-              mb="4%"
-              type="number"
-              placeholder="Preço do Serviço Prestado"
-            ></Input>
-            <SelectItens
-              isMulti
-              options={options}
-              styles="red"
-              placeholder="Formas de Pagamento Aceitas"
-              onChange={this.onChangePaymentMethods}
-              onSelect={this.onChangePaymentMethods}
-            />
-            <Input
-              bg="white"
-              value={this.state.date}
-              onChange={this.onChangeDate}
-              type="date"
-              mt="4%"
-              mb="4%"
-              placeholder="Informe o prazo disponível"
+          <Flex direction="column" mt="1rem" alignItems="center">
+            <Flex
+              shadow="dark-lg"
+              borderRadius="2rem"
+              p="1rem"
+              bg="brand.violet"
+              direction="column"
+              w="35rem"
+              h="32rem"
+            >
+              <Text color="brand.white" textAlign="center" fontSize="2rem">
+                Cadastre o seu serviço!
+              </Text>
+              <Input
+                bg="white"
+                value={this.state.title}
+                onChange={this.onChangeTitle}
+                mt="8%"
+                mb="4%"
+                placeholder="Título do Anúncio"
               ></Input>
-            <ButtonCreat onClick={this.createJob}>
-              {this.state.isLoading ? <Spinner /> : "Cadastrar Serviço"}
-            </ButtonCreat>
-            <ButtonCreat onClick={this.props.goToFindJob}>
-              Lista de Serviços
-            </ButtonCreat>
+              <Input
+                bg="white"
+                value={this.state.description}
+                onChange={this.onChangeDescripton}
+                mb="4%"
+                placeholder="Descrição do Serviço Prestado"
+              ></Input>
+              <Input
+                bg="white"
+                value={this.state.price}
+                onChange={this.onChangePrice}
+                mb="4%"
+                type="number"
+                placeholder="Preço do Serviço Prestado"
+              ></Input>
+              <SelectItens
+                isMulti
+                options={options}
+                styles="red"
+                placeholder="Formas de Pagamento Aceitas"
+                onChange={this.onChangePaymentMethods}
+                onSelect={this.onChangePaymentMethods}
+              />
+              <Input
+                bg="white"
+                value={this.state.date}
+                onChange={this.onChangeDate}
+                type="date"
+                mt="4%"
+                mb="4%"
+                placeholder="Informe o prazo disponível"
+              ></Input>
+              <ButtonCreat onClick={this.createJob}>
+                {this.state.isLoading ? <Spinner /> : "Cadastrar Serviço"}
+              </ButtonCreat>
+              <ButtonCreat onClick={this.props.goToFindJob}>
+                Lista de Serviços
+              </ButtonCreat>
+            </Flex>
           </Flex>
-        </Flex>
         </Section>
-   </ChakraProvider>
+      </ChakraProvider>
     );
   }
 }

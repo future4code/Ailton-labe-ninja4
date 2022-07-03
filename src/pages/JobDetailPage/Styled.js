@@ -13,7 +13,7 @@ export const Section = styled.section`
   height: 30rem;
   margin: 0 auto;
 
-  svg{
+  svg {
     color: #450059;
   }
   @media screen and (max-width: 480px) {
@@ -40,7 +40,7 @@ export const DetailsSection = styled.section`
   h1 {
     font-weight: bold;
     font-size: 1.5rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 `;
 
