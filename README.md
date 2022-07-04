@@ -27,7 +27,7 @@ Todos os requisitos obrigatórios e desafios foram cumpridos:
 - Responsividade para celulares funcional.
 
 ### Link Surge 
-http://ill-pest.surge.sh
+nasty-lumber.surge.sh
 
 ### Imagens
 ![tela inicial](https://user-images.githubusercontent.com/104591781/177049107-74652873-bc06-42b0-9eac-a31da1ce898b.png)

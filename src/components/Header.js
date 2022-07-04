@@ -1,6 +1,6 @@
 import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
-import LogoNinja from "../assets/img/labe.png";
+import LogoNinja from "../assets/img/logotest.png";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { theme } from "../constants/theme";
 import { HeaderContainer, Img, ButtonCart } from "./HeaderStyled";
