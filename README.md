@@ -27,11 +27,7 @@ Todos os requisitos obrigatórios e desafios foram cumpridos:
 - Responsividade para celulares funcional.
 
 ### Link Surge 
-01/07/2022 - http://dramatic-slip.surge.sh - Primeiro Surge
-
-03/07/2022 - http://ill-pest.surge.sh - Entrega Final (data limite estipulada)
-
-04/07/2022 - http://nasty-lumber.surge.sh (Todo o código se mantem - Foi feito apenas a troca da logo que não tinhamos atualizado no github)
+http://nasty-lumber.surge.sh 
 
 ### Imagens
 ![tela inicial](https://user-images.githubusercontent.com/104591781/177049107-74652873-bc06-42b0-9eac-a31da1ce898b.png)
