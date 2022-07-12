@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+<h2 align="center">Projeto LabeNinja🥷</h2>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h4 align="center">A Labeninja é uma startup destinada à busca e oferta de prestações de serviço. Onde os prestadores podem oferecer seus serviços livremente, enquanto as pessoas com demandas específicas podem encontrar perfis bem alinhados ao que precisam.</h4>
 
-## Available Scripts
 
-In the project directory, you can run:
+### Planejamento Inicial
+Foi criado um board no Trello contendo todas as tarefas a serem feitas pelos integrantes do grupo. Onde todas as tarefas tiveram suas complexidades estimadas por pontos e uma definição de feito. Foram anexados materiais gráficos e links nos cards para facilitar o trabalho de quem pegasse a tarefa. Todos os cards possuem descrições detalhadas do que precisa ser feito e tiveram um ou mais responsáveis.
 
-### `npm start`
+Foi definido o layout de todas as páginas, a definição da paleta de cores, criação da logo da empresa e foi planejado como iríamos cumprir todos os requisitos acordados. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+O Wireframe da pagina esta disponivel na pasta email.md também em PDF.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Link do Trello 
+https://trello.com/b/4MHuD3YV/kanban-labeninjas
 
-### `npm test`
+### O que funciona
+Todos os requisitos obrigatórios e desafios foram cumpridos:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Cadastrar novo serviço.
+ - Listagem com todos os serviços cadastrados, onde o usuário é capaz de visualizar os detalhes de cada produto, além de adicionar aquele serviço ao carrinho clicando no icone de carrinho.
+ - Filtros por Titulo, Descrição e Valores máximo e mínimo.
+- Ordenação por Titulo, Valores e Prazos, ordem crescente ou decrescente.
+- Na área do carrinho, o usuário consegue visualizar todos os itens, podendo retirar algum específico ou contratar todos os serviços adicionados.
+- Os itens do carrinho se mantem mesmo que a página seja atualizada.
+- O mesmo serviço não pode ser adicionado ao carrinho mais de uma vez.
+- Tela de loading sempre que estiver carregando alguma requisição.
+- Responsividade para celulares funcional.
 
-### `npm run build`
+### Link Surge 
+http://nasty-lumber.surge.sh 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Imagens
+![tela inicial](https://user-images.githubusercontent.com/104591781/177049107-74652873-bc06-42b0-9eac-a31da1ce898b.png)
+![cadastro](https://user-images.githubusercontent.com/104591781/177049112-d9eec7b6-6c0d-48ca-acbf-13160f32b750.png)
+![serviços](https://user-images.githubusercontent.com/104591781/177049119-ee5e70d3-b053-4938-bbcf-e13168cce1f5.png)
+![detalhes](https://user-images.githubusercontent.com/104591781/177049124-d07f38e2-add7-4157-b975-83ec27122607.png)
+![carrinho com itens](https://user-images.githubusercontent.com/104591781/177049128-1519163a-d55e-4a0c-9b6a-437dcf3bfd82.png)
+![carrinho](https://user-images.githubusercontent.com/104591781/177049137-206b0ea5-ec4b-4761-a8be-c62c5f1f918c.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Responsividade
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![responsividade (2)](https://user-images.githubusercontent.com/104591781/177049490-bc903774-6ab7-4ebf-bb19-ade0af11acb4.jpeg)
+![responsividade (3)](https://user-images.githubusercontent.com/104591781/177049496-3284a150-3be9-4c58-afb3-4ed5e58d76de.jpeg)
+![responsividade (6)](https://user-images.githubusercontent.com/104591781/177049502-d3556934-f2db-4353-9f15-290c99379add.jpeg)
+![responsividade (5)](https://user-images.githubusercontent.com/104591781/177049500-b20ddfa8-96b8-418a-a9d1-51395c449de3.jpeg)
+![responsividade (1)](https://user-images.githubusercontent.com/104591781/177049505-3234d1e5-f228-43e0-ab04-8f2c267e0340.jpeg)
