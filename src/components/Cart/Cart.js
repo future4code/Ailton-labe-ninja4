@@ -11,10 +11,6 @@ export default class Cart extends React.Component {
     removed: false,
   };
 
-  componentDidUpdate(prevProps) {
-    console.log(prevProps);
-  }
-
   totalPurchase = () => {
     let totalCoast = 0;
     for (let job of this.props.listCart) {

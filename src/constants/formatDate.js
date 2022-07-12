@@ -1,9 +1,7 @@
-export const formatDate = () => {
-  const dt = new Date();
-
-  const year = dt.getFullYear();
-  const month = (dt.getMonth() + 1).toString().padStart(2, "0");
-  const day = dt.getDate().toString().padStart(2, "0");
+export const formatDate = (date) => {
+  const year = date.toString().substr(0, 4);
+  const month = date.toString().substr(5, 2);
+  const day = date.toString().substr(8, 2);
 
   return day + "/" + month + "/" + year;
 };

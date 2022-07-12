@@ -34,6 +34,7 @@ export default class App extends React.Component {
   handleCartPage = () => {
     this.setState({ changePage: "CartPage" });
   };
+
   handleDetailPage = (job) => {
     this.setState({ changePage: "DetailPage", jobInfo: job });
   };
@@ -138,7 +139,6 @@ export default class App extends React.Component {
           handleHomePage={this.handleHomePage}
           handleCartPage={this.handleCartPage}
         />
-
         <main>{this.changePage()}</main>
       </ChakraProvider>
     );
