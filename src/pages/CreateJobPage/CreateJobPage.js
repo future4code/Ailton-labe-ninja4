@@ -62,8 +62,7 @@ export default class CreateJobPage extends React.Component {
     this.setState({ isLoading: true });
 
     try {
-      const res = await axios.post(`${BASE_URL}/jobs`, body, headers);
-      console.log(res);
+      await axios.post(`${BASE_URL}/jobs`, body, headers);
       this.setState({
         title: "",
         description: "",
@@ -78,11 +77,9 @@ export default class CreateJobPage extends React.Component {
       );
       this.setState({ isLoading: false });
     } catch (error) {
-      console.log(error.response.data.message);
       this.setState({ resposta: true, status: "error" });
       this.setState({ isLoading: false });
-
-      Swal.fire("", "Algo deu errado, tente novamente!", "error");
+      Swal.fire('Verifique se preencheu todos os campos corretamente.', `O código do erro é: ${error.response.status}`, 'error');
     }
   };
 

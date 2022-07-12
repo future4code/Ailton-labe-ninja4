@@ -10,6 +10,7 @@ export default class JobCard extends React.Component {
     const status = this.props.listCart.filter((item) => {
       return item.id === this.props.job.id;
     });
+
     return (
       <Flex
         borderRadius="10px"
