@@ -26,13 +26,20 @@ Todos os requisitos obrigatórios e desafios foram cumpridos:
 - Tela de loading sempre que estiver carregando alguma requisição.
 - Responsividade para celulares funcional.
 
+### Equipe de Desenvolvedores
+- https://github.com/ArthFarias
+- https://github.com/JilMayumiMoutinho
+- https://github.com/Mariandr4de
+- https://github.com/TalitaMiguel
+- https://github.com/tiagofons
+
 ### Link Surge 
-http://nasty-lumber.surge.sh 
+https://condemned-mask.surge.sh
 
 ### Imagens
 ![tela inicial](https://user-images.githubusercontent.com/104591781/177049107-74652873-bc06-42b0-9eac-a31da1ce898b.png)
 ![cadastro](https://user-images.githubusercontent.com/104591781/177049112-d9eec7b6-6c0d-48ca-acbf-13160f32b750.png)
-![serviços](https://user-images.githubusercontent.com/104591781/177049119-ee5e70d3-b053-4938-bbcf-e13168cce1f5.png)
+![image](https://user-images.githubusercontent.com/104766367/178595237-d4c984ad-fef0-4a9d-974e-d71c3be976ba.png)
 ![detalhes](https://user-images.githubusercontent.com/104591781/177049124-d07f38e2-add7-4157-b975-83ec27122607.png)
 ![carrinho com itens](https://user-images.githubusercontent.com/104591781/177049128-1519163a-d55e-4a0c-9b6a-437dcf3bfd82.png)
 ![carrinho](https://user-images.githubusercontent.com/104591781/177049137-206b0ea5-ec4b-4761-a8be-c62c5f1f918c.png)
